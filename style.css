@@ -1,0 +1,57 @@
+/* style.css — Glassmorphism T2 (purple) */
+:root{
+--bg:#0f0b16; /* darkened page bg */
+--glass-bg: rgba(255,255,255,0.06);
+--glass-border: rgba(255,255,255,0.12);
+--accent: #8b5cf6; /* purple */
+--accent-2: #6d28d9;
+--text: #e9e6f3;
+--muted: #bdb6cf;
+}
+
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial}
+body{background:linear-gradient(180deg,#0b0710 0%, #12081a 100%), url('');color:var(--text);background-color:var(--bg);}
+
+
+.center{min-height:100vh;display:grid;place-items:center;padding:2rem}
+
+
+/* Glass card */
+.glass-card{backdrop-filter: blur(8px) saturate(120%);background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:18px;padding:2rem;box-shadow:0 8px 30px rgba(13,7,22,0.6)}
+.login-card{width:360px;text-align:center}
+.brand{margin:0 0 1rem;font-weight:700;color:var(--accent)}
+
+
+.field{margin-bottom:1rem;text-align:left}
+.field label{display:block;font-size:0.8rem;color:var(--muted);margin-bottom:0.25rem}
+.field input{width:100%;padding:0.7rem;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--text);outline:none}
+.field input:focus{box-shadow:0 4px 14px rgba(109,40,217,0.12);border-color:var(--accent)}
+
+
+.actions{margin-top:1rem}
+.btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;padding:0.6rem 1rem;border-radius:10px;color:white;cursor:pointer;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.error{color:#ffb4b4;margin-top:0.75rem;font-size:0.9rem}
+.hint{font-size:0.85rem;color:var(--muted);margin-top:1rem}
+
+
+/* App shell */
+.app-shell{display:flex;min-height:100vh}
+.sidebar{width:220px;padding:1.5rem;background:linear-gradient(180deg, rgba(139,92,246,0.08), rgba(109,40,217,0.04));border-right:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;justify-content:space-between}
+.logo{font-weight:700;color:var(--accent);margin-bottom:1rem}
+.sidebar nav a{display:block;padding:0.6rem 0;border-radius:8px;color:var(--muted);text-decoration:none}
+.sidebar nav a.active{color:var(--text);background:rgba(139,92,246,0.08)}
+.sidebar-footer{margin-top:1rem}
+
+
+.main-area{flex:1;display:flex;flex-direction:column}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.02)}
+.content{padding:1.5rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.card{background:var(--glass-bg);border:1px solid var(--glass-border);padding:1rem;border-radius:12px}
+.panel{margin-top:1.25rem;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+
+
+@media(max-width:800px){.sidebar{display:none}.app-shell{flex-direction:column}.main-area{padding-top:0}}
